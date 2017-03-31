@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>環境永續設計概論</title>
+      <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<div class="container">
+  <form id="contact" action="" method="POST" target="no-target">
+    <h3>系鬥大會!</h3>
+    <h4>Let's ERM great again.</h4>
+		<h4>說明：<br>出席滿30人 葉老師參加<br>出席滿50人 主任參加<br>出席滿100人 神秘人物</h4>
+    <fieldset>
+    </fieldset>
+
+    <fieldset>
+      <input placeholder="學號" type="text" id="name" tabindex="2" required autofocus>
+    </fieldset>
+    <fieldset>
+    <button name="submit" type="submit" id="form-submit">📢 有話大聲說</button>
+    </fieldset>
+    <p class="footer"><a href="http://tdcweb.xyz" target="_blank" >低吸設計der</a> Google提供表單技術。</br><del>但還是低吸寫的比較多啦</del></p>
+    <font color="white"><p id="input-feedback"></p></font>
+
+  </form>
+
+<iframe src="#" id="no-target" name="no-target" style="visibility:hidden" width="0" height="0"></iframe>
+  <script>
+      $('#contact').one('submit',function(){
+          var inputq2 = encodeURIComponent($('#name').val());
+          var q2ID = "entry.1376854959";
+          var rrl = 'P2Vzbm9wc2VSbXJvZi9RWEhhYXdkMldrM2s0RjJsNVhSVXB4NzVaR1ZUdWRNSmVraUJ6ZmMwTTltb00wUmNTTFFwSUFGMS9lL2Qvc21yb2YvbW9jLmVsZ29vZy5zY29kLy86c3B0dGg='
+          var baseURL = atob(rrl).split('').reverse().join('');
+          var submitRef = '&submit=Submit';
+          var submitURL = (baseURL + q2ID + "=" + inputq2 + "&" + submitRef);
+          console.log(submitURL);
+          $(this)[0].action=submitURL;
+          $('#form-submit').text('傳送中...');
+          $('#input-feedback').text('Let\'s Go');
+          $('#form-submit').text('好惹。');
+          $('#form-submit').prop('disabled', true);
+          alert("好了。");
+      });
+
+      </script>
+
+</div>
+</body>
+</html>
